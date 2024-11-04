@@ -14,7 +14,9 @@ function multiply(a,b){
     return a * b
 }
 
-module.exports = add
-module.exports = subtract
-module.exports = divide
-module.exports = multiply
+module.exports = {
+    add,
+    subtract,
+    divide,
+    multiply
+};
