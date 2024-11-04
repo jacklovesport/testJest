@@ -58,3 +58,35 @@ describe('caesarCipher', () => {
     });
 
 });
+
+
+const analyzeArray = require('./analyzeArray.js');
+
+describe('analyzeArray', () => {
+    test('returns correct statistics for a valid array of numbers', () => {
+        expect(analyzeArray([1, 2, 3, 4, 5])).toEqual({
+            average: 3,
+            min: 1,
+            max: 5,
+            length: 5,
+        });
+    });
+
+    test('throws an error for an empty array', () => {
+        expect(() => analyzeArray([])).toThrow("Input must be a non-empty array of numbers.");
+    });
+
+    test('throws an error for non-array input', () => {
+        expect(() => analyzeArray("not an array")).toThrow("Input must be a non-empty array of numbers.");
+    });
+
+    test('handles an array with one number', () => {
+        expect(analyzeArray([7])).toEqual({
+            average: 7,
+            min: 7,
+            max: 7,
+            length: 1,
+        });
+    });
+});
+
